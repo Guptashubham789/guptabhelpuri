@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "792623897496",
+    "project_id": "guptabhelpuri-8be2d",
+    "storage_bucket": "guptabhelpuri-8be2d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792623897496:android:7b7661798af57b464aa9ed",
+        "android_client_info": {
+          "package_name": "com.example.guptabhelpuri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792623897496-ondem4vhm3u61ugd6fgpn5vhn23hebfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAifom8eeJnJvhKwKaKaV_qxmbNb9YUuHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792623897496-ondem4vhm3u61ugd6fgpn5vhn23hebfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
