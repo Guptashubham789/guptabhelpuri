@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
@@ -21,6 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
     'GALLERY',
     'CONTACTS',
   ];
+  final List<String> bannerImages = [
+
+    'assets/img/banner2.jpg',
+    'assets/img/banner3.jpg',
+    'assets/img/banner4.jpg',
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,35 +40,72 @@ class _HomeScreenState extends State<HomeScreen> {
         return Scaffold(
           drawer: isMobile ? mobileDrawer() : null,
           appBar: isMobile
-              ? AppBar(
-            backgroundColor: Colors.black,
-            iconTheme: const IconThemeData(color: Colors.white),
-            title: const Text(
-              'Gupta Bhelpuri & Sandwich',
-              style: TextStyle(color: Colors.white),
-            ),
-          )
+              ? null
               : null,
           body: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (!isMobile) topHeader(),
                 mainHeader(isMobile),
 
                 // ----------- BANNER IMAGE -----------
-                AspectRatio(
-                  aspectRatio: isMobile ? 21 / 5 : 35 / 9,
-                  child: Image.asset(
-                    'assets/img/banner1.jpg',
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+                bannerSlider(isMobile),
+
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 4,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        "Our Menus",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "serif",
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 40),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: menuList.length,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,        // 2 cards in one row
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8,
+                      childAspectRatio: 0.8,
+                    ),
+                    itemBuilder: (context, index) {
+                      final item = menuList[index];
+                      return _menuGridCard(
+                        title: item['title'] ?? "No Name",
+                        imageUrl: item['image'] ?? "",
+                      );
+                    },
+                  ),
+                ),
 
 
+                const SizedBox(height: 12),
 
-                const SizedBox(height: 40),
 
                 // ----------- FOOTER -----------
                 footer(),
@@ -69,6 +115,89 @@ class _HomeScreenState extends State<HomeScreen> {
 
         );
       },
+    );
+  }
+  final List<Map<String, String>> menuList = [
+    {
+      "title": "Sandwich",
+      "image":
+      "assets/img/sandwich.jpg"
+    },
+    {
+      "title": "Sevpuri",
+      "image":
+      "assets/img/sevpuri1.jpg"
+    },
+    {
+      "title": "Bhelpuri",
+      "image":
+      "assets/img/sevpuri2.jpg"
+    },
+    {
+      "title": "Ragda Paties",
+      "image":
+      "assets/img/sevpuri2.jpg"
+    },
+    {
+      "title": "Panipuri",
+      "image":
+      "assets/img/panipuri.jpg"
+    },
+    {
+      "title": "Dahi Bhalle",
+      "image":
+      "assets/img/dahipuri.jpg"
+    },
+  ];
+  Widget _menuGridCard({
+    required String title,
+    required String imageUrl,
+  }) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(14),
+        child: Stack(
+          children: [
+            Image.network(
+              imageUrl,
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.cover,
+            ),
+
+            // dark overlay
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black.withOpacity(0.45),
+                  ],
+                ),
+              ),
+            ),
+
+            Positioned(
+              bottom: 8,
+              left: 10,
+              child: Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -84,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const Icon(Icons.call, color: Colors.yellow, size: 16),
           const SizedBox(width: 6),
           const Text(
-            '+91 9270142040 | sg731159@gmail.com',
+            '+91 9594419414 | sg731159@gmail.com',
             style: TextStyle(color: Colors.white, fontSize: 12),
           ),
           const Spacer(),
@@ -248,4 +377,38 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+  Widget bannerSlider1(bool isMobile) {
+    return SizedBox(
+      height: isMobile ? 120 : 300,
+      child: PageView(
+        children: [
+          Image.asset('assets/img/banner1.jpg', fit: BoxFit.contain),
+          Image.asset('assets/img/banner1.jpg', fit: BoxFit.contain),
+          Image.asset('assets/img/banner1.jpg', fit: BoxFit.contain),
+        ],
+      ),
+    );
+  }
+  /* banner*/
+  Widget bannerSlider(bool isMobile) {
+    return CarouselSlider(
+      options: CarouselOptions(
+        height: isMobile ? 305 : 500,
+        autoPlay: true,
+        autoPlayInterval: const Duration(seconds: 3),
+        viewportFraction: 1,
+        enlargeCenterPage: false,
+      ),
+      items: bannerImages.map((image) {
+        return Image.asset(
+          image,
+          width: double.infinity,
+          fit: BoxFit.contain,
+        );
+      }).toList(),
+    );
+  }
+
+
+
 }
