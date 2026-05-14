@@ -121,32 +121,32 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       "title": "Sandwich",
       "image":
-      "assets/img/sandwich.jpg"
+      "https://res.cloudinary.com/dg2rc53o1/image/upload/v1768721191/iuzyhyj2ouitdlm2kwrk.jpg"
     },
     {
       "title": "Sevpuri",
       "image":
-      "assets/img/sevpuri1.jpg"
+      "https://res.cloudinary.com/dg2rc53o1/image/upload/v1768721190/rvxztkbmjcglpfsdvs57.jpg"
     },
     {
       "title": "Bhelpuri",
       "image":
-      "assets/img/sevpuri2.jpg"
+      "https://res.cloudinary.com/dg2rc53o1/image/upload/v1768722187/ynf5idcb6qizpix2iixq.jpg"
     },
     {
-      "title": "Ragda Paties",
+      "title": "Mini Grill",
       "image":
-      "assets/img/sevpuri2.jpg"
+      "https://res.cloudinary.com/dg2rc53o1/image/upload/v1768721693/cxmwdldyhi7ktxoa752e.jpg"
     },
     {
       "title": "Panipuri",
       "image":
-      "assets/img/panipuri.jpg"
+      "https://res.cloudinary.com/dg2rc53o1/image/upload/v1768721190/ak3gfhulbvfeziuqosrv.jpg"
     },
     {
       "title": "Dahi Bhalle",
       "image":
-      "assets/img/dahipuri.jpg"
+      "https://res.cloudinary.com/dg2rc53o1/image/upload/v1768721203/mshqgffkknhllgpf1aek.jpg"
     },
   ];
   Widget _menuGridCard({
