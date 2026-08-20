@@ -12,6 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../controllers/sign_in_google_controller.dart';
+import '../widgets/full_screen_image_widget.dart';
 import 'about_screen.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -366,10 +367,22 @@ class _LandingScreenState extends State<LandingScreen> {
                   alignment: Alignment.topCenter,
                   child: Column(
                     children: [
-                      Image.asset(
-                        "assets/img/shop_logo.png", // your shop logo
-                        height: 200,
-                        width: 200,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const FullScreenImage(
+                                imagePath: "assets/img/shop_logo.png",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Image.asset(
+                          "assets/img/shop_logo.png",
+                          height: 200,
+                          width: 200,
+                        ),
                       ),
                     ],
                   ),
@@ -474,109 +487,96 @@ class _LandingScreenState extends State<LandingScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-        
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/1.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
+
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/1.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/1.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                       const SizedBox(width: 5),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/9.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/9.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/9.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                       const SizedBox(width: 5),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/4.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/4.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
                           ),
-                        ),
-                      ),
-        
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-        
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/2.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/8.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/3.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/4.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -591,50 +591,198 @@ class _LandingScreenState extends State<LandingScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
 
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/5.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/2.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/2.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                       const SizedBox(width: 5),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/6.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/8.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/8.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                       const SizedBox(width: 5),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.orange, width: 2),
-                          borderRadius: BorderRadius.circular(15),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/3.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/3.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(13),
-                          child: Image.asset(
-                            "assets/img/7.jpg",
-                            height: 120,
-                            width: 105,
-                            fit: BoxFit.cover,
+                      ),
+        
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/5.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/5.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/6.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/6.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullScreenImage(
+                                imagePath: "assets/img/7.jpg",
+                              ),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.orange,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(13),
+                            child: Image.asset(
+                              "assets/img/7.jpg",
+                              height: 120,
+                              width: 105,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),

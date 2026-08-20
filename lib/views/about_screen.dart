@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/full_screen_image_widget.dart';
+
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
 
@@ -53,10 +55,22 @@ class _AboutScreenState extends State<AboutScreen> {
               child: Column(
                 children: [
                   Center(
-                    child: Image.asset(
-                      "assets/team/img.png", // apna logo path
-                      height: 120,
-                      width: 120,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FullScreenImage(
+                              imagePath: "assets/team/img.png",
+                            ),
+                          ),
+                        );
+                      },
+                      child: Image.asset(
+                        "assets/team/img.png",
+                        height: 120,
+                        width: 120,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -73,9 +87,23 @@ class _AboutScreenState extends State<AboutScreen> {
             Center(
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage("assets/team/img_2.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FullScreenImage(
+                            imagePath: "assets/team/img_2.png",
+                          ),
+                        ),
+                      );
+                    },
+                    child: const CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage(
+                        "assets/team/img_2.png",
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
@@ -90,9 +118,23 @@ class _AboutScreenState extends State<AboutScreen> {
             Center(
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage("assets/team/img_1.png"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FullScreenImage(
+                            imagePath: "assets/team/img_1.png",
+                          ),
+                        ),
+                      );
+                    },
+                    child: const CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage(
+                        "assets/team/img_1.png",
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
